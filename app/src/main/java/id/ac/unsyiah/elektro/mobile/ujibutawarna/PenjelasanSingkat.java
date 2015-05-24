@@ -1,9 +1,12 @@
 package id.ac.unsyiah.elektro.mobile.ujibutawarna;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 
 public class PenjelasanSingkat extends ActionBarActivity {
@@ -12,6 +15,9 @@ public class PenjelasanSingkat extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_penjelasan_singkat);
+
+        TextView artikelView = (TextView) findViewById(R.id.txtArtikel);
+        artikelView.setText(R.string.teks_Artikel);
     }
 
     @Override
@@ -34,5 +40,10 @@ public class PenjelasanSingkat extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public  void kembaliMainMenu(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
